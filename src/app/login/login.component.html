@@ -1,3 +1,18 @@
-<p>
-  login works!
-</p>
+<div class="form">
+  <form class="login-box" [formGroup]="loginForm" (ngSubmit)="login()">
+    <p>
+      <mat-form-field>
+        <input matInput type="text" placeholder="User Name" formControlName="userName" name="username"/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="User Name" formControlName="password" name="password"/>
+      </mat-form-field>
+    </p>
+    <p>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </p>
+  </form>
+  <p>
+    {{error}}
+  </p>
+</div>

@@ -8,8 +8,11 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
 import { EditModuleComponent } from './edit-course/edit-module/edit-module.component';
 import { EditModuleContentComponent } from './edit-course/edit-module-content/edit-module-content.component';
 import { GuestComponent } from './guest/guest.component';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MainAppComponent } from './main-app/main-app.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularMaterialModule } from './angular-material/angular-material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const MainRoutes: Routes = [
   {path: '', redirectTo: '/g/login', pathMatch: 'full'},
@@ -47,7 +50,11 @@ export const MainRoutes: Routes = [
     MainAppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserAnimationsModule,
+    AngularMaterialModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    RouterModule.forRoot(MainRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]
